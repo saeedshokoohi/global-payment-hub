@@ -1,0 +1,63 @@
+
+entity PaymentAgentInfo
+{
+   id Long,
+   title String,
+   createDate ZonedDateTime
+   agentType PaymentAgentType,
+   username String,
+   password String,
+   customerId Long,
+   token String,
+   paymentUrl String,
+   defaultReturnUrl String,
+   status PaymentAgentStatus,
+   isDeleted Boolean,
+   description String,
+   agentConfig String,
+   
+}
+
+entity PaymentLog{
+id Long,
+createDate ZonedDateTime,
+consumerAppId Long,
+paymentSubject String,
+customerId Long,
+traceCode String,
+status PaymentStatus,
+decription String,
+amount Long,
+responseInfo String,
+requestInfo String
+}
+
+enum PaymentAgentType {
+    PAYPING, ZARRINPAL, DIGIPAY
+}
+enum PaymentAgentStatus {
+    ACTIVE, EXPIRED, DISABLED
+}
+enum PaymentStatus {
+    ACTIVE, FAILED, DONE 
+}
+
+relationship ManyToOne {
+	PaymentLog{paymentAgentInfo} to PaymentAgentInfo
+}
+
+
+
+
+
+// Set pagination options
+paginate * with infinite-scroll
+
+// Use Data Transfert Objects (DTO)
+ dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+ angularSuffix * with mySuffix
