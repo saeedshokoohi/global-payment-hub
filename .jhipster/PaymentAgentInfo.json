@@ -1,0 +1,72 @@
+{
+    "name": "PaymentAgentInfo",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "agentType",
+            "fieldType": "PaymentAgentType",
+            "fieldValues": "PAYPING,ZARRINPAL,DIGIPAY"
+        },
+        {
+            "fieldName": "username",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "customerId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "token",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "defaultReturnUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "PaymentAgentStatus",
+            "fieldValues": "ACTIVE,EXPIRED,DISABLED"
+        },
+        {
+            "fieldName": "isDeleted",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agentConfig",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200213215200",
+    "entityTableName": "payment_agent_info",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "GlobalPaymentHub",
+    "applications": "*",
+    "microserviceName": "GlobalPaymentHub",
+    "angularJSSuffix": "mySuffix"
+}
